@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.cyan,
         title: Center(
           child: Text(
             "Home",
@@ -38,26 +38,99 @@ class Home extends StatelessWidget {
       backgroundColor: Colors.white,
       body:
       Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(children: [
-          Container(
-            margin: EdgeInsets.all(8),
-            height: 100,
-            width: 450,
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.black12,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText:'Enter your name'
+        padding: const EdgeInsets.all(14.0),
+        child: Column(
+          children: [
+            Container(
+              height: 100,
+              width: 500,
+              decoration: BoxDecoration(
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.5),
+                    blurRadius: 8,
+                    spreadRadius: 3,
+                    offset: Offset(0,4),
+                  )
+                ],
+                  color: Colors.cyan,
+                  borderRadius: BorderRadius.circular(12)
               ),
             ),
-          ),
-        ]),
-      ),
+            SizedBox(
+              height: 16,
+              width: 16,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                suffixIcon: TextButton(
+                  child: Text('Search'),
+                  onPressed: (){
+                    print('Search clicked');
+                  },
+                ),
+                icon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(
+                    color: Colors.cyanAccent,
+                    width: 2,
+                    style: BorderStyle.solid
+                  )
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.cyan
+                  )
+                )
+              ),
+            ),
+            SizedBox(
+              height: 12,
+              width: 12,
+            ),TextField(
+              decoration: InputDecoration(
+
+                  icon: Icon(Icons.person),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                          color: Colors.cyanAccent,
+                          width: 2,
+                          style: BorderStyle.solid
+                      )
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.cyan
+                      )
+                  )
+              ),
+            ),SizedBox(
+              height: 12,
+              width: 12,
+            ),TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                  icon: Icon(Icons.password),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(
+                          color: Colors.cyanAccent,
+                          width: 2,
+                          style: BorderStyle.solid
+                      )
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.cyan
+                      )
+                  )
+              ),
+            ),
+          ],
+        ),
+      )
       // body: ListView.separated(
       //     itemBuilder: (context, index) {
       //       return ListTile(
