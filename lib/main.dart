@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>
+            children: <Widget>[
               // Title
               Text(
                 'Flutter Text Styling',
